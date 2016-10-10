@@ -1,4 +1,4 @@
-export const Task = fork => ({
+export default const Task = fork => ({
    map: f => Task((reject, resolve)=>{ fork(reject, x => { resolve(f(x)) })  }),
    chain: f => Task((reject, resolve)=>{ fork(reject, x => { f(x).fork(reject, resolve) })  }),
    join: () => Task(fork).chain(i=>i),
