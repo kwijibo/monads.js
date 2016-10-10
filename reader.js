@@ -6,6 +6,3 @@ const Reader = run => ({
 })
 Reader.of = i => Reader(_=>i)
 const ask = Reader(i=>i).map
-
-const dbRead = id => ask(({read} ) => read(id))
-const dbWrite = record => ask(({write}) => write(record))
