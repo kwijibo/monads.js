@@ -1,6 +1,7 @@
 import {Reader, ask} from './reader.js'
 import Identity from './identity.js'
 import Task from './task.js'
+import R from 'ramda'
 
 const dbRead = id => ask(({read} ) => read(id))
 const dbWrite = record => ask(({write}) => write(record))
