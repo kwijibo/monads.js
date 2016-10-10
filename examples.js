@@ -9,7 +9,7 @@ const dbWrite = record => ask(({write}) => write(record))
 dbRead(1)
  .map(R.assoc('password', 'swordfish'))
  .chain(dbWrite)
- .run({
+ .run({ //can replace these functions with ones that make database calls
   read: x => ({id: 1}),
   write: x => (["Saved", x])
 }) //=> ["Saved", {"id": 1, "password": "swordfish"}]
