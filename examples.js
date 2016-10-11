@@ -6,7 +6,7 @@ import R from 'ramda'
 
 //Reader monad is used for dependency injection. Instead of hardcoding the dependencies, or passing them in at the beginning,
 //it lets us return an object (ie, a reader monad) to which we can either supply the dependencies and run the program, or
-// compose in another function in the sequence. And keep doing so, until we decide to supply the dependencies.
+// compose in another function in the sequence using `map` or `chain`. And keep doing so, until we decide to supply the dependencies.
 
 const dbRead = id => ask(({read} ) => read(id))
 const dbWrite = record => ask(({write}) => write(record))
