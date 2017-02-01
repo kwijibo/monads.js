@@ -6,4 +6,5 @@ const Task = fork => ({
    fork
 })
 Task.of = x => Task((_,resolve)=>{ resolve(x)})
+Task.empty = () => Task(()=>{})
 export default Task
