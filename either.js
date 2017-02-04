@@ -15,7 +15,7 @@ const Left = x => ({
   chain: f => Left(x),
   ap: F => Left(x),
   alt: E => E,
-  reduce: (f, y) => f(y, x),
+  reduce: (f, y) => y,
   foldMap: (Of, Monoid) => Monoid,
   cata: pattern => pattern.Right(x)
 })
