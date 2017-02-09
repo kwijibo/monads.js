@@ -17,7 +17,7 @@ const Left = x => ({
   alt: E => E,
   reduce: (f, y) => y,
   foldMap: (Of, Monoid) => Monoid,
-  cata: pattern => pattern.Right(x)
+  cata: pattern => pattern.Left(x)
 })
 
 const Either = {of: Right, empty: Left}
